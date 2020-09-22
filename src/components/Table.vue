@@ -56,13 +56,13 @@
             color="warning"
             @click="onActionListUpdate(props.row)"
           />&nbsp;
-          <q-btn icon="delete" size="sm" dense color="red" @click="onActionListDelete(props.row)" />
+          <!-- <q-btn icon="delete" size="sm" dense color="red" @click="onActionListDelete(props.row)" /> -->
         </q-td>
       </template>
       <template v-slot:body-col-options="props">
         <q-menu></q-menu>
         <q-btn icon="edit" size="sm" dense color="warning" @click="onActionListUpdate(props.row)" />&nbsp;
-        <q-btn icon="delete" size="sm" dense color="red" @click="onActionListDelete(props.row)" />
+        <!-- <q-btn icon="delete" size="sm" dense color="red" @click="onActionListDelete(props.row)" /> -->
       </template>
     </q-table>
   </div>
