@@ -5,7 +5,8 @@
         <q-btn dense flat round icon="menu" @click="left = !left" />
         <q-toolbar-title>
           <q-avatar>
-            <img :src="icon" />
+            <!-- <img :src="icon" /> -->
+            <q-icon name="donut_small" size="2em"></q-icon>
           </q-avatar>
           {{ app }}
         </q-toolbar-title>

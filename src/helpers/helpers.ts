@@ -62,3 +62,34 @@ export function getLocalization(): Promise<any> {
     }
   });
 }
+
+
+export function printDiv(idName: string) {
+  //@ts-ignore
+  const dataUrl = document.getElementById(idName).toDataURL(); 
+
+		let windowContent = '<!DOCTYPE html>';
+		windowContent += '<html>';
+		windowContent += '<head><title>Print canvas</title></head>';
+		windowContent += '<body>';
+		windowContent += '<img src="' + dataUrl + ' " style="display: block; margin: auto; padding: 4em;">';
+		windowContent += '</body>';
+		windowContent += '</html>';
+
+		const printWin = window.open('', '', 'width=' + screen.availWidth + ',height=' + screen.availHeight);
+    //@ts-ignore
+    printWin.document.open();
+    //@ts-ignore
+    printWin.document.write(windowContent); 
+    //@ts-ignore
+		printWin.document.addEventListener('load', function() {
+    //@ts-ignore
+    printWin.focus();
+    //@ts-ignore
+    printWin.print();
+    //@ts-ignore
+    printWin.document.close();
+    //@ts-ignore
+    printWin.close();            
+		}, true);
+}

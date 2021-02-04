@@ -11,6 +11,7 @@ import { ILogin } from '../../models/login';
 export class AuthStoreModule extends VuexModule {
 	public token: string = '';
 	public userLogged: IUser = {};
+	public loader: boolean = false;
 
 	@Mutation
 	LOGIN(token: string) {

@@ -4,6 +4,7 @@ import VuexPersistence from 'vuex-persist';
 // import example from './module-example'
 import { DATASTORAGE } from '../helpers/configs';
 import { AuthStoreModule } from "./modules/auth";
+import { AgendaStoreModule } from "./modules/agenda";
 import { UserStoreModule } from "./modules/user";
 import { GlobalStoreModule } from "./modules/global";
 
@@ -17,7 +18,8 @@ export default new Vuex.Store({
 	modules: {
 		AuthStoreModule,
 		UserStoreModule,
-		GlobalStoreModule
+		GlobalStoreModule,
+		AgendaStoreModule
 	},
 
 	// @ts-ignore

@@ -13,7 +13,9 @@ const routes: RouteConfig[] = [
 		children: [
 			{ path: '', component: () => import('pages/Admin/Index.vue') },
 			{ path: 'usuarios', component: () => import('pages/Admin/Users.vue') },
-			{ path: 'roles', component: () => import('pages/Admin/Rols.vue') }
+			{ path: 'roles', component: () => import('pages/Admin/Rols.vue') },
+			{ path: 'calendary', component: () => import('pages/Admin/calendar.vue') },
+			{ path: 'localization', component: () => import('pages/Admin/Localization.vue') }
 		]
 	}
 ];

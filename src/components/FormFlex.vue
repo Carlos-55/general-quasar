@@ -423,6 +423,7 @@
             lazy-rules
             :rules="item.rules"
             v-model="model[item.key]"
+            :hint="item.hint"
             :label="$t(item.label)"
             @change="onValidation"
             v-bind="item.props"

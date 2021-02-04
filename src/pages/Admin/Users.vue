@@ -54,7 +54,7 @@ export default class Users extends Vue {
       sortable: true,
       required: true,
       align: 'center',
-      field: 'name'
+      field: 'user'
     },
     {
       name: 'email',
@@ -64,22 +64,22 @@ export default class Users extends Vue {
       align: 'center',
       field: 'email'
     },
-    {
-      name: 'active',
-      label: 'headers.users.state',
-      sortable: true,
-      required: true,
-      align: 'center',
-      field: 'active'
-    },
-    {
-      name: 'rol',
-      label: 'headers.users.rol',
-      sortable: true,
-      required: true,
-      align: 'center',
-      field: 'rol'
-    },
+    // {
+    //   name: 'active',
+    //   label: 'headers.users.state',
+    //   sortable: true,
+    //   required: true,
+    //   align: 'center',
+    //   field: 'active'
+    // },
+    // {
+    //   name: 'rol',
+    //   label: 'headers.users.rol',
+    //   sortable: true,
+    //   required: true,
+    //   align: 'center',
+    //   field: 'rol'
+    // },
     {
       name: 'options',
       label: 'headers.users.options',

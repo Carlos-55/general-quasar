@@ -33,6 +33,16 @@ export default class Index extends Vue {
 			description: 'Muestra los usuarios',
 			url: '/admin/roles',
 		},
+		{
+			title: 'Calendario',
+			description: 'Muestra un calendario completo',
+			url: '/admin/calendary',
+		},
+		{
+			title: 'Ubicacion Actual',
+			description: 'Mostramos la ubicacion del usuario',
+			url: '/admin/localization'
+		}
 	];
 }
 </script>
