@@ -64,14 +64,14 @@ export default class Users extends Vue {
       align: 'center',
       field: 'email'
     },
-    // {
-    //   name: 'active',
-    //   label: 'headers.users.state',
-    //   sortable: true,
-    //   required: true,
-    //   align: 'center',
-    //   field: 'active'
-    // },
+    {
+      name: 'active',
+      label: 'headers.users.state',
+      sortable: true,
+      required: true,
+      align: 'center',
+      field: 'active'
+    },
     // {
     //   name: 'rol',
     //   label: 'headers.users.rol',

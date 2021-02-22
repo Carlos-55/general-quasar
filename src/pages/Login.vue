@@ -61,7 +61,7 @@ export default class Login extends Vue {
 		{
 			type: 'text',
 			label: 'Usuario',
-			key: 'email',
+			key: 'user',
 			field: {
 				class: 'col-12 q-px-sm q-py-sm',
 			},

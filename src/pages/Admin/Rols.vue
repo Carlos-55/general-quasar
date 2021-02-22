@@ -1,7 +1,13 @@
 <template>
 <div id="Rols">
-    <img src="https://lh3.googleusercontent.com/proxy/Dfgci3gHfA_LRa2-K1MtW1qvZ32htY6ut7Rt5hkmr6n4w9Q4itvu1pjUtb6MNv697BlFZHNIBIzizq0rtZCT9OJ3oux4FFrPoag6AlJukhGnFy-NABPpjVo1UpZ0gn3_XDcH3Ttho4C43cLqTy9ttpAV3CFl9XiVKoI" alt="Sherk" 
-	style="display: block; margin: auto; padding: 4em;" />
+
+  <div>
+    <!-- <q-img :src="data[8].icons[0].light"></q-img>
+    {{this.data[8].icons[0].night}} -->
+  </div>
+
+
+
 </div>
 </template>
 
@@ -9,7 +15,14 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
-export default class Rols extends Vue {}
+export default class Rols extends Vue {
+  data : any = {};
+
+  async mounted() {
+    this.$q.dark.set(true);
+    // this.data = await Vue.prototype.$axios.get(`page/all-service`);
+  }
+}
 </script>
 
 <style>
