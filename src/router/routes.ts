@@ -1,8 +1,13 @@
 import { RouteConfig } from 'vue-router';
 
 const routes: RouteConfig[] = [
-	{
+  {
 		path: '/',
+		meta: { requiresNoAuth: true, },
+		component: () => import('pages/page_game.vue')
+	},
+  {
+		path: '/login',
 		meta: { requiresNoAuth: true, },
 		component: () => import('pages/Login.vue')
 	},
