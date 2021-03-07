@@ -1,7 +1,7 @@
 <template>
   <div id="PageGame">
 
-  <div class="q-pa-xl" v-if="$q.screen.xl || $q.screen.md">
+  <div class="q-pa-md" v-if="$q.screen.xl || $q.screen.md">
     <Stepper></Stepper>
   </div>
   <div class="q-pa-md" v-else>

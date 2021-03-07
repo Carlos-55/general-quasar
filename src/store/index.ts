@@ -7,6 +7,7 @@ import { AuthStoreModule } from "./modules/auth";
 import { AgendaStoreModule } from "./modules/agenda";
 import { UserStoreModule } from "./modules/user";
 import { GlobalStoreModule } from "./modules/global";
+import { PartsStoreModule } from './modules/partidos';
 
 Vue.use(Vuex);
 const vuexLocal = new VuexPersistence<any>({
@@ -19,7 +20,8 @@ export default new Vuex.Store({
 		AuthStoreModule,
 		UserStoreModule,
 		GlobalStoreModule,
-		AgendaStoreModule
+		AgendaStoreModule,
+    PartsStoreModule
 	},
 
 	// @ts-ignore
