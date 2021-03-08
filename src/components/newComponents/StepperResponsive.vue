@@ -227,26 +227,82 @@
                     </div>
                 </q-tab-panel>
             <q-tab-panel name="PDF">
-                <div class="q-pa-md pdfs">
-                <q-pdfviewer
-                  v-model="show"
-                  src="'https://www.ets.org/Media/Tests/GRE/pdf/gre_research_validity_data.pdf'"
-                  type="pdfjs"
-                  content-class="absolute"
-                />
-----------------
-                <template>
-                  <div class="container q-pa-lg">
-                    <q-pdfviewer
-                      v-model="show"
-                      :src="src"
-                      type="html5"
-                      content-class="fit container"
-                      inner-content-class="fit container"
-                    />
-                  </div>
-                </template>
+                <div align="left">
+                 <p>Descarga informacion del tema.<q-badge align="top">
+                   i
+                   </q-badge></p>
                 </div>
+                  <q-list bordered separator class="rounded-borders">
+                    <q-item-label header>Folders</q-item-label>
+
+                    <q-item clickable v-ripple>
+                        <q-item-section avatar top>
+                        <q-avatar icon="folder" color="primary" text-color="white" />
+                        </q-item-section>
+
+                        <q-item-section>
+                        <q-item-label lines="1">Photos</q-item-label>
+                        <q-item-label caption>February 22nd, 2019</q-item-label>
+                        </q-item-section>
+
+                        <q-item-section side>
+                        <q-icon name="info" color="green" />
+                        </q-item-section>
+                    </q-item>
+
+                    <q-item clickable v-ripple>
+                        <q-item-section avatar top>
+                        <q-avatar icon="folder" color="orange" text-color="white" />
+                        </q-item-section>
+
+                        <q-item-section>
+                        <q-item-label lines="1">Movies</q-item-label>
+                        <q-item-label caption>March 1st, 2019</q-item-label>
+                        </q-item-section>
+
+                        <q-item-section side>
+                        <q-icon name="info" />
+                        </q-item-section>
+                    </q-item>
+
+                    <q-item clickable v-ripple>
+                        <q-item-section avatar top>
+                        <q-avatar icon="folder" color="teal" text-color="white" />
+                        </q-item-section>
+
+                        <q-item-section>
+                        <q-item-label lines="1">Photos</q-item-label>
+                        <q-item-label caption>January 15th, 2019</q-item-label>
+                        </q-item-section>
+
+                        <q-item-section side>
+                        <q-icon name="info" />
+                        </q-item-section>
+                    </q-item>
+
+                    <q-separator spaced />
+                    <q-item-label header>Descarga nuestra presentacion</q-item-label>
+
+
+                    <q-item clickable v-ripple>
+                        <q-item-section avatar top >
+                        <a href="../../assets/files/presentacion_rocha_raya.pdf" download>
+                        <q-avatar icon="important_devices" color="purple-5" text-color="white" />
+                        </a>
+                        </q-item-section>
+                            <q-item-section>
+                             <a href="../../assets/files/presentacion_rocha_raya.pdf" download class="border">
+                                <q-item-label lines="1">Presentacion</q-item-label>
+                                <q-item-label caption>Rocha, Raya</q-item-label>
+                            </a>
+                        </q-item-section>
+                        <q-item-section side>
+                         <a href="../../assets/files/presentacion_rocha_raya.pdf" download class="border">
+                        <q-icon name="cloud_circle" color="blue-4"/>
+                         </a>
+                        </q-item-section>
+                    </q-item>
+                    </q-list>
             </q-tab-panel>
             </q-tab-panels>
         </q-card>
@@ -257,7 +313,7 @@
                 </q-card-section>
 
                 <q-card-section class="q-pt-none">
-                    Selecciona los partidos que van en alianza
+                    <u>Selecciona los partidos que van en alianza</u>
                 </q-card-section>
 
                 <q-card-actions align="right" class="bg-white text-teal">
@@ -371,7 +427,7 @@ export default class Stepper extends Vue {
     }
 
     addLocal(){
-      NotifyPersonal("Success","Puedes cerar y continuar");
+      NotifyPersonal("Success","Puedes cerrar y continuar");
       localStorage.setItem("Partido", JSON.stringify(this.partido));
     }
 
@@ -417,5 +473,8 @@ export default class Stepper extends Vue {
 }
 .pdfs{
 max-width: 50%;
+}
+.border{
+  text-decoration-line: none;
 }
 </style>
