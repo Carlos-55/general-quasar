@@ -319,11 +319,11 @@ export default class Index extends Vue {
 
 <style lang="sass" scoped>
 .canvas 
-  padding: 1.5%;
-  width: 100%;
-  margin: 0 auto;
-  display: block;
-  border: 1px solid #d9d9d9;
+  padding: 1.5%
+  width: 100%
+  margin: 0 auto
+  display: block
+  border: 1px solid #d9d9d9
 
 
 .row > div

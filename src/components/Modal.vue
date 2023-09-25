@@ -91,7 +91,7 @@ export default class Modal extends Vue {
 <style lang="scss" scope>
 .modal-btn {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-content: flex-end;
 }
 </style>

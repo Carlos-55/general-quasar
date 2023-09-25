@@ -224,9 +224,9 @@ export default class Index extends Vue {
   letter-spacing: 0.03333em
 
 .borders
-  padding: 1.5%;
-  width: 100%;
-  margin: 0 auto;
-  display: block;
-  border: 1px solid #d9d9d9;
+  padding: 1.5%
+  width: 100%
+  margin: 0 auto
+  display: block
+  border: 1px solid #d9d9d9
 </style>
