@@ -19,13 +19,13 @@
 
                 <div align="Center">
                     <div class="q-pt-md">
-                        <q-btn unelevated class="q-my-sm text-black" @click="onSubmit" color="amber-7">Buscar tu escuela</q-btn>
+                        <q-btn unelevated class="q-my-sm text-black" no-caps @click="onSubmit" color="amber-7">Buscar tu escuela</q-btn>
                     </div>
                     <div class="q-pt-lg">
-                        <q-btn unelevated class="q-my-sm text-black" @click="onSubmit" color="grey-4">Registrar tu escuela</q-btn>
+                        <q-btn unelevated class="q-my-sm text-black" no-caps @click="onSubmit" color="grey-4">Registrar tu escuela</q-btn>
                     </div>
                     <div class="q-pt-none">
-                        <q-btn unelevated class="q-my-sm text-black" @click="onSubmit" color="grey-4">Pide ayuda</q-btn>
+                        <q-btn unelevated class="q-my-sm text-black" no-caps @click="onSubmit" color="grey-4">Pide ayuda</q-btn>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@ export default class Index extends Vue {
         // await this.authState.login(this.auth);
         // if (this.authState.isAuth) {
             // this.$router.push('/find-school');
-            this.$router.push('/find-school')
+            this.$router.push('find-school')
         // }
     }
     // onSubmit(){
