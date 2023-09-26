@@ -4,7 +4,10 @@ const routes: RouteConfig[] = [
 	{
 		path: '/',
 		meta: { requiresNoAuth: true, },
-		component: () => import('pages/Login.vue')
+		component: () => import('pages/Gael.vue'),
+		children : [
+			{ path: '/find-school', component: () => import('pages/FindSchool.vue') },
+		]
 	},
 	{
 		path: '/admin',

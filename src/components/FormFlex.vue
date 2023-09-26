@@ -399,7 +399,9 @@
         </template>
         <template v-else-if="item.type == 'password'">
           <q-input
-            dense
+            filled
+            bg-color="grey-3" 
+            label-color="black"
             lazy-rules
             :type="item.isPassword?'password':'text'"
             v-model="model[item.key]"
@@ -419,7 +421,9 @@
         </template>
         <template v-else>
           <q-input
-            dense
+            filled
+            bg-color="grey-3" 
+            label-color="black"
             lazy-rules
             :rules="item.rules"
             v-model="model[item.key]"

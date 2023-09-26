@@ -1,25 +1,34 @@
 <template>
-	<div id="Login" class="bg-white">
+	<div id="FindSchool" class="bg-white">
 		<div class="row justify-center items-center ">
-			<div align="center" class="q-mt-lg text-h5 text-weight-bolder" >
-				Colegio Francisto Villa 
+			<div align="center" class="q-mt-xl text-h5 text-weight-bolder" >
+				Busca tu escuela
 			</div>
 		</div>
-		<div align="center" class="q-mt-lg text-deep-orange text-weight-bolder text-h6" color="secondary">
-				Ingresa tu cuenta 
+		<div align="center" class="q-mt-lg text-h7 text-weight-medium" color="secondary">
+				Escribe el identificador de tu escuela <br> (ejemplo ENM8)
 			</div>
 		
 		<div class="fit justify-center items-center">
 			
 			<div class="col-10 col-sm-5 col-md-3 col-lg-2">
-				
-				<FormFlex
+                <q-input
+                    class="col-12 q-px-xl q-pt-md"
+                    filled
+                    bg-color="grey-3" 
+                    label-color="black"
+                    lazy-rules
+                    label="Escriba a qui"
+                />
+				<!-- class: 'col-12 q-px-xl q-pt-md', -->
+
+				<!-- <FormFlex
 					:fields="fields"
 					:loader="authState.loader"
 					@onValidation="changeValidation"
 					:model="auth"
 					@onSubmit="onSubmit"
-				/>
+				/> -->
 				<div align="Center">
 					<div class="q-px-sm">
 						<q-btn
@@ -27,22 +36,11 @@
 							class="q-my-sm text-black"
 							@click="onSubmit"
 							color="amber-7"
-							>Ingresa</q-btn
+							>Continua</q-btn
 						>
 					</div>
-					<div class="q-px-sm">
-						<q-btn
-							unelevated 
-							class="q-my-sm text-black"
-							@click="onSubmit"
-							color="grey-4"
-							>Inicio</q-btn
-						>
-					</div>
-					<div class="row justify-betwen q-pt-lg">
-						<div class="col-3"></div>
-						<div class="col-6 text-h6 text-weight-bold">Términos de Uso Privacidad</div>
-					</div>
+					
+
 				</div>				
 			</div>
 		</div>
@@ -63,7 +61,7 @@ import { DialogPersonal } from '../helpers/messages';
 		FormFlex,
 	},
 })
-export default class Login extends Vue {
+export default class FindSchool extends Vue {
 	authState = getModule(AuthStoreModule, this.$store);
 	formValid: boolean = false;
 	auth = {};
@@ -116,7 +114,7 @@ export default class Login extends Vue {
 </script>
 
 <style lang="scss">
-#Login {
+#FindSchool {
 	height: 100vh;
 	width: 100%;
 	background-color:black;
