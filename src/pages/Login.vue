@@ -69,22 +69,22 @@ export default class Login extends Vue {
 	auth = {};
 	async onSubmit() {
 		// return;
-		if (!this.formValid)
-			return DialogPersonal(
-				'Info',
-				'Verifica los datos de tu formulario'
-			);
-		await this.authState.login(this.auth);
-		if (this.authState.isAuth) {
+		// if (!this.formValid)
+		// 	return DialogPersonal(
+		// 		'Info',
+		// 		'Verifica los datos de tu formulario'
+		// 	);
+		// await this.authState.login(this.auth);
+		// if (this.authState.isAuth) {
 			this.$router.push('/admin');
-		}
+		// }
 	}
 	changeValidation(isValid: boolean) {
 		if (this.formValid != isValid) {
 			this.formValid = isValid;
 		}
 	}
-	fields = [
+	fields: any = [
 		{
 			type: 'text',
 			label: 'Usuario',

@@ -12,6 +12,7 @@ export class AuthStoreModule extends VuexModule {
 	public token: string = '';
 	public userLogged: IUser = {};
 	public loader: boolean = false;
+	public buttonSelect: string = '';
 
 	@Mutation
 	LOGIN(token: string) {
@@ -24,6 +25,10 @@ export class AuthStoreModule extends VuexModule {
 	@Mutation
 	SET(user: IUser) {
 		this.userLogged = user;
+	}
+	@Mutation
+	SETBUTTONSELECT(selected: string){
+		this.buttonSelect = selected;
 	}
 
 	@Action

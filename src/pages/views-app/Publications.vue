@@ -2,12 +2,12 @@
     
     <div class="col-md-6 col-12">
       <div v-if="articleFlag">
-        <ShowPublication></ShowPublication>
+        <ShowPublication @onClose="closeFlag"></ShowPublication>
       </div>
       <div v-if="publications">
 
         <div v-for="item in gael">
-          <q-item clickable v-ripple @click="showArticle(true)">
+          <q-item clickable v-ripple @click="showArticle()">
           <q-item-section avatar>
             <q-avatar rounded>
               <img src="https://cdn.quasar.dev/img/mountains.jpg">
@@ -42,15 +42,18 @@
     
     
     async mounted() {
-      console.log('gael');
       
     }
 
-    showArticle(flag:boolean){
+    showArticle(){
         this.publications = false
-        this.articleFlag= flag
+        this.articleFlag= !this.articleFlag
     }
 
+    closeFlag(closeShow: boolean){
+      this.publications = true
+      this.articleFlag= closeShow
+    }
 
         
     

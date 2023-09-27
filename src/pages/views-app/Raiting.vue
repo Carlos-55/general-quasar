@@ -56,7 +56,7 @@
     
     
     async mounted() {
-      console.log('gael');
+      ;
       
     }
         

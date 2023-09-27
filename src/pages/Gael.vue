@@ -1,7 +1,7 @@
 <template>
     <div id="Index" class="bg-white">
 
-        <q-toolbar class="bg-grey-3 shrink">
+        <!-- <q-toolbar class="bg-grey-3 shrink">
 
 
             <q-toolbar-title class="q-ma-lg text-h5 text-weight-bolder ">
@@ -13,7 +13,7 @@
                 </div>
             </q-toolbar-title>
 
-        </q-toolbar>
+        </q-toolbar> -->
 
 
         <div v-if="publications">
@@ -31,11 +31,10 @@
 
 
 
-
+<!-- 
         <div class="q-mt-lx">
             <div class="row bg-grey-3 fixed-bottom absolute-bottom ">
                 <div class="col q-ma-md">
-                    <!-- <q-btn color="grey-4" text-color="deep-orange-5" icon="campaign" size="1.3em" @click="changueView(1)" /> -->
                     <button :style="$q.screen.lt.md ? 'width : 100%; font-size:14px' : ''"
                     icon="open"
                     :class="stage == 'publications' ? 'succes_one' : 'button'" id="rol" @click="changueView(1)">
@@ -50,7 +49,6 @@
                     </button>
                 </div>
                 <div class="col q-ma-md">
-                    <!-- <q-btn color="grey-4" text-color="deep-orange-5" icon="paid" size="1.3em" @click="changueView(2)" /> -->
                     <button :style="$q.screen.lt.md ? 'width : 100%; font-size:14px' : ''"
                         :class="stage == 'payments' ? 'succes_one' : 'button'" id="rol" @click="changueView(2)">
                         <div v-if="payments">
@@ -62,7 +60,6 @@
                     </button>
                 </div>
                 <div class="col q-ma-md">
-                    <!-- <q-btn color="grey-4" text-color="deep-orange-5" icon="school" size="1.3em" @click="changueView(3)" /> -->
                     <button :style="$q.screen.lt.md ? 'width : 100%; font-size:14px' : ''"
                         :class="stage == 'ratings' ? 'succes_one' : 'button'" id="rol" @click="changueView(3)">
                     
@@ -75,7 +72,6 @@
                     </button>
                 </div>
                 <div class="col q-ma-md">
-                    <!-- <q-btn color="grey-4" text-color="deep-orange-5" icon="settings" size="1.3em" @click="changueView(4)" /> -->
                     <button :style="$q.screen.lt.md ? 'width : 100%; font-size:14px' : ''"
                         :class="stage == 'account' ? 'succes_one' : 'button'" id="rol" @click="changueView(4)">
                             
@@ -92,7 +88,7 @@
             </div>
 
 
-        </div>
+        </div> -->
 
 
 

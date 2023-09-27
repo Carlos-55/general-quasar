@@ -110,7 +110,7 @@ export default class ViewPayments extends Vue {
     dialogFlag: boolean = false;
 
     async mounted() {
-        console.log('gael');
+        ;
 
     }
 
