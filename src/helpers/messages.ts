@@ -49,3 +49,30 @@ export const DialogPersonal = (typeNotify: Notified, messageSending: string, tra
 	Dialog.create({ title, message, color });
 
 }
+
+
+export const DialogPayment = (payment: any) => {
+	let title = 'Pagar $ ' + payment + ' con'
+	let pagar = 
+	// let message: string = translate ? translateMessage(messageSending) : messageSending;
+	// let color: string = 'green'
+	// let title: string = translate ? translateMessage(`notifications.titles.Success`) : "Success"
+	// switch (typeNotify) {
+	// 	case "Error":
+	// 		color = 'red'
+	// 		title = translate ? translateMessage(`notifications.titles.Error`) : "Error"
+	// 		break;
+	// 	case "Info":
+	// 		color = 'blue'
+	// 		title = translate ? translateMessage(`notifications.titles.Info`) : "Information"
+	// 		break;
+	// 	case "Warning":
+	// 		color = 'yellow'
+	// 		title = translate ? translateMessage(`notifications.titles.Warning`) : "Warning"
+	// 		break;
+	// 	default:
+	// 		break;
+	// }
+	Dialog.create({ title  });
+
+}

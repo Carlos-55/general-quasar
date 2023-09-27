@@ -62,7 +62,7 @@ export default class Index extends Vue {
         // await this.authState.login(this.auth);
         // if (this.authState.isAuth) {
             // this.$router.push('/find-school');
-            this.$router.push('find-school')
+            this.$router.push('/find-school')
         // }
     }
     // onSubmit(){

@@ -9,91 +9,84 @@
                     Colegio Francisto Villa
                 </div>
                 <div align="center" class="text-deep-orange text-weight-bolder text-h6" color="secondary">
-                    Ingresa tu cuenta
+                    {{publications == true ? 'Publicaciones': payments == true ?'Pagos': ratings == true ? 'Boleta de calificaiones':'Cuenta' }}
                 </div>
             </q-toolbar-title>
 
         </q-toolbar>
 
-        <!-- -->
-        <!-- <h1 v-if="publications == true">Pub</h1>
-        <h1 v-if="payments == true">pago</h1>
-        <h1 v-if="ratings == true">Calificaciones</h1>
-        <h1 v-if="account == true">cuenta</h1> -->
-            <!-- <div v-if="publications == true">
-                 <div>
-                    <q-scroll-area style="height: 400px; max-width: 480px;">
-                        <div v-for="item in gael">
-                             <q-card class="my-card" flat bordered>
-                                <q-item>
-                                    <q-item-section avatar>
-                                        <q-avatar rounded>
-                                            <img src="https://cdn.quasar.dev/img/avatar.png">
-                                        </q-avatar>
-                                    </q-item-section>
 
-                                    <q-item-section>
-                                        <q-item-label>Titulo de la publicaion </q-item-label>
-                                        <q-item-label caption>
-                                            Espacio
-                                        </q-item-label>
-                                        <q-item-label caption>
-                                            aaaa-mm-dd
-                                        </q-item-label>
-                                    </q-item-section>
-                                </q-item>
-
-                                
-                                
-                            </q-card>
-                    
-                </div>
-    </q-scroll-area>
-          
-            </div> 
-            
-        </div> -->
-        
-        <div v-if="publications == true">
+        <div v-if="publications">
             <ViewPublications></ViewPublications>
         </div>
-        
-      <!-- <q-item clickable v-ripple>
-        <q-item-section avatar>
-          <q-avatar rounded>
-            <img src="https://cdn.quasar.dev/img/mountains.jpg">
-          </q-avatar>
-        </q-item-section>
-        <div class="">
-            <q-item-section></q-item-section>
-            <q-item-section class="text-subtitle2 text-weight-bold">Titulo de la publicaion</q-item-section>
-            <q-item-section>Espacio</q-item-section>
-            <q-item-section>26/sep/2023</q-item-section>
-
+        <div v-if="payments">
+            <ViewPayments></ViewPayments>
+        </div>
+        <div v-if="ratings">
+            <ViewRaiting></ViewRaiting>
+        </div>
+        <div v-if="account">
+            <ViewGears></ViewGears>
         </div>
 
-        
-      </q-item> -->
+
 
 
         <div class="q-mt-lx">
             <div class="row bg-grey-3 fixed-bottom absolute-bottom ">
                 <div class="col q-ma-md">
                     <!-- <q-btn color="grey-4" text-color="deep-orange-5" icon="campaign" size="1.3em" @click="changueView(1)" /> -->
-                        <button :style="$q.screen.lt.md ? 'width : 100%; font-size:14px' : ''"
-                                :class="stage == '' ? 'succes_one' : 'button'"
-                                id="rol"
-                                @click="changueView(1)">
-                        </button>
+                    <button :style="$q.screen.lt.md ? 'width : 100%; font-size:14px' : ''"
+                    icon="open"
+                    :class="stage == 'publications' ? 'succes_one' : 'button'" id="rol" @click="changueView(1)">
+
+                    <div v-if="publications">
+                    <img src="../assets/icons/select/voice.svg">
+                    </div>
+                    <div v-if="!publications">
+                            <img src="../assets/icons/not_select/voice_not.svg">
+                        </div>
+                        
+                    </button>
                 </div>
                 <div class="col q-ma-md">
-                    <q-btn color="grey-4" text-color="deep-orange-5" icon="paid" size="1.3em" @click="changueView(2)" />
+                    <!-- <q-btn color="grey-4" text-color="deep-orange-5" icon="paid" size="1.3em" @click="changueView(2)" /> -->
+                    <button :style="$q.screen.lt.md ? 'width : 100%; font-size:14px' : ''"
+                        :class="stage == 'payments' ? 'succes_one' : 'button'" id="rol" @click="changueView(2)">
+                        <div v-if="payments">
+                            <img src="../assets/icons/select/money.svg">
+                        </div>
+                        <div v-if="!payments">
+                            <img src="../assets/icons/not_select/money_not.svg">
+                        </div>
+                    </button>
                 </div>
                 <div class="col q-ma-md">
-                    <q-btn color="grey-4" text-color="deep-orange-5" icon="school" size="1.3em" @click="changueView(3)" />
+                    <!-- <q-btn color="grey-4" text-color="deep-orange-5" icon="school" size="1.3em" @click="changueView(3)" /> -->
+                    <button :style="$q.screen.lt.md ? 'width : 100%; font-size:14px' : ''"
+                        :class="stage == 'ratings' ? 'succes_one' : 'button'" id="rol" @click="changueView(3)">
+                    
+                        <div v-if="ratings">
+                            <img src="../assets/icons/select/education.svg">
+                        </div>
+                        <div v-if="!ratings">
+                            <img src="../assets/icons/not_select/graduation_not.svg">
+                        </div>
+                    </button>
                 </div>
                 <div class="col q-ma-md">
-                    <q-btn color="grey-4" text-color="deep-orange-5" icon="settings" size="1.3em" @click="changueView(4)" />
+                    <!-- <q-btn color="grey-4" text-color="deep-orange-5" icon="settings" size="1.3em" @click="changueView(4)" /> -->
+                    <button :style="$q.screen.lt.md ? 'width : 100%; font-size:14px' : ''"
+                        :class="stage == 'account' ? 'succes_one' : 'button'" id="rol" @click="changueView(4)">
+                            
+                        <div v-if="account">
+                            <img class="icono" src="../assets/icons/select/gears.svg">
+                        </div>
+                        <div v-if="!account">
+                            <img src="../assets/icons/not_select/gears_not.svg">
+                        </div>
+
+                    </button>
                 </div>
 
             </div>
@@ -115,12 +108,18 @@ import { ValidationsForm } from '../helpers/validations';
 import { DialogPersonal } from '../helpers/messages';
 import { log } from 'console';
 import ViewPublications from 'src/pages/views-app/Publications.vue';
+import ViewPayments from 'src/pages/views-app/Payments.vue'
+import ViewGears from 'src/pages/views-app/Gears.vue'
+import ViewRaiting from 'src/pages/views-app/Raiting.vue';
 
 // import { MsgError } from '../helpers/messages';
 
 @Component({
     components: {
         ViewPublications,
+        ViewPayments,
+        ViewGears,
+        ViewRaiting
     },
 })
 export default class Index extends Vue {
@@ -132,7 +131,7 @@ export default class Index extends Vue {
     account: boolean = false;
     stage: string = "";
     stage_open: string = '';
-    gael: Array<any> = ["HTML", "CSS", "Javascript", "Terminal","asd","asddf","gae","mart","das","HTML", "CSS", "Javascript", "Terminal","asd","asddf","gae","mart","das","HTML", "CSS", "Javascript", "Terminal","asd","asddf","gae","mart","das"];
+    gael: Array<any> = ["HTML", "CSS", "Javascript", "Terminal", "asd", "asddf", "gae", "mart", "das", "HTML", "CSS", "Javascript", "Terminal", "asd", "asddf", "gae", "mart", "das", "HTML", "CSS", "Javascript", "Terminal", "asd", "asddf", "gae", "mart", "das"];
 
 
     auth = {};
@@ -224,7 +223,7 @@ export default class Index extends Vue {
 
     async mounted() {
 
-        this.stage = this.stage_open || 'change_rol';
+        this.stage = this.stage_open || 'publications';
         this.changueView(this.stage == "publications" ? 1 : this.stage == "payments" ? 2 : 3);
     }
 
@@ -239,39 +238,65 @@ export default class Index extends Vue {
     width: 100%;
     background-color: black;
 }
-.button{
-  color : rgba(0, 0, 0, 0.256);
-  border-radius: 4px 4px 4px 4px;
-  border: 1px solid rgb(233, 233, 233);
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 15px;
-  text-align: center;
-  padding: 25px 32px;
-  background-color:rgb(216, 216, 216);
+
+.button {
+    color: rgba(0, 0, 0, 0.256);
+    border-radius: 6px 6px 6px 6px;
+    border: 1px solid rgb(233, 233, 233);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    padding: 25px 32px;
+    background-color: rgb(216, 216, 216);
+    height: 8vh;
+    display: grid;
+    justify-content: center;
+    margin: auto;
+    padding-top: 13%;
 
 }
-.button:active{
-  background-color:rgb(249, 225, 44);
-  border: 2px solid rgb(236, 211, 24);
-  color : white;
-  text-align: center;
-}
-.succes_one{
-  background-color:rgb(236, 211, 24);
-  border: 2px solid rgb(236, 211, 24);
-  color : white;
-  text-align: center;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 15px;
-  padding: 4px 55px;
-  border-radius: 8px 8px 0px 0px;
-}
-.button:focus{
-    background-color:rgb(255, 183, 0);
-    border: 1px solid rgb(226, 219, 219);
-    color : white;
+
+.button:active {
+    background-color: rgb(249, 225, 44);
+    border: 2px solid rgb(236, 211, 24);
+    color: white;
     text-align: center;
+    height: 8vh;
+    display: grid;
+    justify-content: center;
+    margin: auto;
+    padding-top: 13%;
+}
+
+.succes_one {
+    background-color: rgb(255, 183, 0);
+    border: 1px solid rgb(255, 183, 0);
+    // color: white;
+    // text-align: center;
+    cursor: pointer;
+    // font-weight: bold;
+    // font-size: 15px;
+    padding: 25px 32px;
+    border-radius: 6px 6px 6px 6px;
+    height: 8vh;
+    display: grid;
+    justify-content: center;
+    margin: auto;
+    padding-top: 13%;    
+
+
+}
+
+
+.button:focus {
+    
+    background-color: rgb(255, 183, 0);
+    background-image:url(../assets/icons/select/voice.svg);
+    border: 1px solid rgb(226, 219, 219);
+    color: white;
+    text-align: center;
+}
+.icono{ 
 }
 </style>
