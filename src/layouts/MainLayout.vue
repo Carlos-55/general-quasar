@@ -5,7 +5,8 @@
         <q-btn dense flat round icon="menu" @click="left = !left" v-if="$q.screen.width > 900"/>
         <q-toolbar-title align="center">
           <div class="q-mt-none text-h5 text-weight-bolder">
-                    Colegio Francisto Villa {{$q.screen.width}}
+                    Colegio Francisto Villa 
+                    <!-- {{$q.screen.width}} -->
           </div>
           <div class="q-mt-none text-h6 text-weight-bolder text-orange-10">
             {{ auth.namePage }}
