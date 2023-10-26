@@ -50,6 +50,29 @@ export class AuthStoreModule extends VuexModule {
 	}
 
 
+	get namePage(){
+		switch (this.buttonSelect) {
+			case 'publications':
+				return 'Publicaciones';
+			case 'publication':
+				return 'Publicaciones';
+			case 'payments':
+				return 'Pagos';
+			case 'payment':
+				return 'Pagos';
+			case 'ratings':
+				return 'Calificaciones';
+			case 'gears':
+				return 'Calificaciones';
+			case 'account':
+				return 'Cuenta';
+			case 'raiting':
+				return 'Cuenta';
+			default:
+				return '';
+		}
+	}
+
 	get userPhoto() {
 		if (!this.token) return '';
 		return this.userLogged ? this.userLogged.photo : '';

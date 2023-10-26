@@ -19,30 +19,29 @@ import { ModuleOptions } from 'vuex-module-decorators/dist/types/moduleoptions';
 export default class Index extends Vue {
 	items = [
 		{
-			title: 'Inicio',
-			description: 'Muestra el inicio',
-			url: '/admin',
+			title: 'Publicaciones',
+			description: '',
+			icon: require('../assets/icons/not_select/voice_not.svg'),
+			url: '/admin/publication',
+		},
+		{
+			title: 'Pagos',
+			description: '',
+			icon: require('../assets/icons/not_select/money_not.svg'),
+			url: '/admin/payment',
+		},
+		{
+			title: 'Calificaciones',
+			description: '',
+			icon: require('../assets/icons/not_select/graduation_not.svg'),
+			url: '/admin/gears',
 		},
 		{
 			title: 'Usuarios',
-			description: 'Muestra los usuarios',
-			url: '/admin/usuarios',
+			description: '',
+			icon: require('../assets/icons/not_select/gears_not.svg'),
+			url: '/admin/raiting',
 		},
-		{
-			title: 'Roles',
-			description: 'Muestra los usuarios',
-			url: '/admin/roles',
-		},
-		{
-			title: 'Calendario',
-			description: 'Muestra un calendario completo',
-			url: '/admin/calendary',
-		},
-		{
-			title: 'Ubicacion Actual',
-			description: 'Mostramos la ubicacion del usuario',
-			url: '/admin/localization'
-		}
 	];
 }
 </script>

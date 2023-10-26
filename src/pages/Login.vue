@@ -9,9 +9,9 @@
 				Ingresa tu cuenta 
 			</div>
 		
-		<div class="fit justify-center items-center">
+		<div class="row justify-center">
 			
-			<div class="col-10 col-sm-5 col-md-3 col-lg-2">
+			<div class="col-12 col-md-4">
 				
 				<FormFlex
 					:fields="fields"
@@ -27,6 +27,7 @@
 							class="q-my-sm text-black"
 							@click="onSubmit"
 							color="amber-7"
+							no-caps
 							>Ingresa</q-btn
 						>
 					</div>
@@ -36,6 +37,7 @@
 							class="q-my-sm text-black"
 							@click="onSubmit"
 							color="grey-4"
+							no-caps
 							>Inicio</q-btn
 						>
 					</div>

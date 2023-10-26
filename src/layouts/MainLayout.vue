@@ -2,32 +2,36 @@
   <q-layout view="hHr lpR lFr">
     <q-header class="bg-grey-3 text-black">
       <q-toolbar>
+        <q-btn dense flat round icon="menu" @click="left = !left" v-if="$q.screen.md"/>
         <q-toolbar-title align="center">
           <div class="q-mt-none text-h5 text-weight-bolder">
                     Colegio Francisto Villa
           </div>
           <div class="q-mt-none text-h6 text-weight-bolder text-orange-10">
-            Publicaciones
+            {{ auth.namePage }}
           </div>
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
-    <!-- <q-drawer show-if-above v-model="left" side="left" elevated>
+    <q-drawer show-if-above v-model="left" side="left" elevated v-if="$q.screen.md">
       <q-list bordered separator v-if="items && items.length > 0">
         <q-item v-for="(item, i) of items" :to="item.url" clickable v-ripple :key="i">
-          <q-item-section>
-            <q-item-label>{{ item.title }}</q-item-label>
-            <q-item-label v-if="item.description" caption>{{ item.description }}</q-item-label>
+          <q-item-section avatar v-if="item.icon && item.icon != ''">
+            <q-avatar size="sm">
+                <img :src="item.icon">
+              </q-avatar>
           </q-item-section>
+          <q-item-section>{{ item.title }}</q-item-section>
         </q-item>
         <q-item clickable v-ripple @click="logout()" :key="'hola'">
-          <q-item-section>
-            <q-item-label>Cerrar sesion</q-item-label>
-          </q-item-section>
+            <q-item-section avatar>
+              <q-icon color="orange-10" name="power_settings_new"></q-icon>
+            </q-item-section>
+            <q-item-section>Cerrar sesion</q-item-section>
         </q-item>
       </q-list>
-    </q-drawer> -->
+    </q-drawer>
 
     <q-page-container>
       <q-page padding>
@@ -35,45 +39,45 @@
       </q-page>
     </q-page-container>
 
-    <q-footer>
+    <q-footer v-if="!$q.screen.md">
       <q-toolbar class="bg-grey-3">
         <div class="col-12">
           <div class="row  justify-around">
             <div class="col-2 q-ma-md">
-              <q-btn :color="auth.buttonSelect === 'publications' ? 'amber' : 'grey-4'" @click="changueView(1)">
+              <q-btn :color="auth.namePage === 'Publicaciones' ? 'amber' : 'grey-4'" @click="changueView(1)">
                 <q-avatar >
                   <q-img :src="
-                    auth.buttonSelect === 'publications' 
+                    auth.namePage === 'Publicaciones' 
                     ? require('../assets/icons/select/voice.svg') 
                     : require('../assets/icons/not_select/voice_not.svg')"/>
                 </q-avatar>
               </q-btn>
             </div>
             <div class="col-2 q-ma-md">
-              <q-btn :color="auth.buttonSelect === 'payments' ? 'amber' : 'grey-4'" @click="changueView(2)">
+              <q-btn :color="auth.namePage === 'Pagos' ? 'amber' : 'grey-4'" @click="changueView(2)">
                 <q-avatar >
                   <q-img :src="
-                    auth.buttonSelect === 'payments' 
+                    auth.namePage === 'Pagos' 
                     ? require('../assets/icons/select/money.svg') 
                     : require('../assets/icons/not_select/money_not.svg')"/>
                 </q-avatar>
               </q-btn>
             </div>
             <div class="col-2 q-ma-md">
-              <q-btn :color="auth.buttonSelect === 'ratings' ? 'amber' : 'grey-4'" @click="changueView(3)">
+              <q-btn :color="auth.namePage === 'Calificaciones' ? 'amber' : 'grey-4'" @click="changueView(3)">
                 <q-avatar>
                   <q-img :src="
-                    auth.buttonSelect === 'ratings' 
+                    auth.namePage === 'Calificaciones' 
                     ? require('../assets/icons/select/education.svg') 
                     : require('../assets/icons/not_select/graduation_not.svg')"/>
                 </q-avatar>
               </q-btn>
             </div>
             <div class="col-2 q-ma-md">
-              <q-btn :color="auth.buttonSelect === 'account' ? 'amber' : 'grey-4'" @click="changueView(4)">
+              <q-btn :color="auth.namePage === 'Cuenta' ? 'amber' : 'grey-4'" @click="changueView(4)">
                 <q-avatar>
                   <q-img :src="
-                    auth.buttonSelect === 'account' 
+                    auth.namePage === 'Cuenta' 
                     ? require('../assets/icons/select/gears.svg') 
                     : require('../assets/icons/not_select/gears_not.svg')"/>
                 </q-avatar>
@@ -145,8 +149,11 @@ export default class AdminLayout extends Vue {
     }
   }
 
-  @Watch('auth.buttonSelect')
+  
+
+  @Watch('$route')
   watchOption(){    
+    this.auth.SETBUTTONSELECT(this.$route.path.split('/')[2]) 
   }
 
   logout() {
