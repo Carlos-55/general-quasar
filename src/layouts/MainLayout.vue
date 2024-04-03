@@ -2,10 +2,11 @@
   <q-layout view="hHr lpR lFr">
     <q-header class="bg-grey-3 text-black">
       <q-toolbar>
-        <q-btn dense flat round icon="menu" @click="left = !left" v-if="$q.screen.md"/>
+        <q-btn dense flat round icon="menu" @click="left = !left" v-if="$q.screen.width > 900"/>
         <q-toolbar-title align="center">
           <div class="q-mt-none text-h5 text-weight-bolder">
-                    Colegio Francisto Villa
+                    Colegio Francisto Villa 
+                    <!-- {{$q.screen.width}} -->
           </div>
           <div class="q-mt-none text-h6 text-weight-bolder text-orange-10">
             {{ auth.namePage }}
@@ -14,7 +15,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="left" side="left" elevated v-if="$q.screen.md">
+    <q-drawer show-if-above v-model="left" side="left" elevated v-if="$q.screen.width > 900">
       <q-list bordered separator v-if="items && items.length > 0">
         <q-item v-for="(item, i) of items" :to="item.url" clickable v-ripple :key="i">
           <q-item-section avatar v-if="item.icon && item.icon != ''">
@@ -39,7 +40,7 @@
       </q-page>
     </q-page-container>
 
-    <q-footer v-if="!$q.screen.md">
+    <q-footer v-if="$q.screen.width < 900">
       <q-toolbar class="bg-grey-3">
         <div class="col-12">
           <div class="row  justify-around">
@@ -120,6 +121,8 @@ export default class AdminLayout extends Vue {
   @Prop({ type: Array, required: false }) items!: Array<any>;
 
   created() {
+    console.log(this.$q.screen.width);
+
     this.global.setLanguage(this.global.lang);
   }
 
@@ -154,6 +157,11 @@ export default class AdminLayout extends Vue {
   @Watch('$route')
   watchOption(){    
     this.auth.SETBUTTONSELECT(this.$route.path.split('/')[2]) 
+  }
+
+  @Watch('$q')
+  watchSize(){    
+    console.log(this.$q.screen.width);
   }
 
   logout() {
