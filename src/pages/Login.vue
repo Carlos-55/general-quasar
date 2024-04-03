@@ -79,6 +79,8 @@ export default class Login extends Vue {
 		// await this.authState.login(this.auth);
 		// if (this.authState.isAuth) {
 			this.$router.push('/admin');
+			// console.log('es aqui ');
+			
 		// }
 	}
 	changeValidation(isValid: boolean) {
