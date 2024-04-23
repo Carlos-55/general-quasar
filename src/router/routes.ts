@@ -2,14 +2,15 @@ import { RouteConfig } from 'vue-router';
 
 const routes: RouteConfig[] = [
 	{
-		path: '/login',
-		// meta: { requiresNoAuth: true, },
+		path: '/',
+		meta: { requiresNoAuth: true, },
 		component: () => import('pages/Login.vue'),
 	},
 	{
 		path: '/admin',
 		component: () => import('pages/Admin.vue'),
-		// meta: { requiresAuth: false, },
+		// meta: { requiresAuth: true },
+		meta: { requiresNoAuth: false },
 		children: [
 			{ path: '', component: () => import('pages/FindSchool.vue') },
 			{ path: 'correct', component: () => import('pages/FindCorrect.vue') },

@@ -63,27 +63,38 @@
       </q-item>  
         </div>
        -->
+    <div class="col-12" align="center">
+        <q-btn icon-right="logout" color="amber-10" no-caps @click="logout"> Cerrar sesion </q-btn>
+    </div>
+
 </div>
 </template>
 
   
 <script lang="ts">
+import { AuthStoreModule } from 'src/store/modules/auth';
 import {
     Component,
     Prop,
     Vue
 } from 'vue-property-decorator';
+import { getModule } from 'vuex-module-decorators';
 
 //@ts-ignore
 @Component({
     components: {}
 })
 export default class ViewRaiting extends Vue {
+    authStore = getModule(AuthStoreModule, this.$store)
     gael: Array < any > = ["asddf", "gae", "mart", "das", "HTML", "CSS"];
 
     async mounted() {
-        ;
+        
+    }
 
+    logout(){
+        // this.authStore.logout()
+        this.$router.push("/")
     }
 
 }
